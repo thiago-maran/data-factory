@@ -1,0 +1,9 @@
+{
+	"name": "AlphaVantageStock",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bf42d5c2-7336-4f0f-b7c3-71f0170bdd45",
+		"tenantId": "5c845283-0f7c-45a0-9787-1b3a47a2bb0a"
+	}
+}
