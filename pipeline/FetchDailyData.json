@@ -1,0 +1,163 @@
+{
+	"name": "FetchDailyData",
+	"properties": {
+		"activities": [
+			{
+				"name": "WebActivityToFetchCSV",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": {
+						"value": "@https://www.alphavantage.co/query?function=LISTING_STATUS&apikey=pipeline().parameters.apikey",
+						"type": "Expression"
+					},
+					"method": "GET"
+				}
+			},
+			{
+				"name": "LookupSymbols",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "WebActivityToFetchCSV",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"dataset": {
+						"referenceName": "TicketsFromAlphaVantage",
+						"type": "DatasetReference"
+					}
+				},
+				"outputs": [
+					{
+						"name": "symbolArray",
+						"type": "Variable"
+					}
+				]
+			},
+			{
+				"name": "DownloadAllTicketsFromB3",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "LookupSymbols",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('LookupSymbols').output.value",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "DownloadDataToStorage",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "RestSource",
+									"httpRequestTimeout": "00:01:40",
+									"requestInterval": "00.00:00:00.010",
+									"requestMethod": "GET"
+								},
+								"sink": {
+									"type": "JsonSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "JsonWriteSettings"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "AlphaVantageDailyDataset",
+									"type": "DatasetReference",
+									"parameters": {
+										"symbol": {
+											"value": "@item()",
+											"type": "Expression"
+										},
+										"apikey": {
+											"value": "@pipeline().parameters.apikey",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "AlphaVantageDailyRawDataset",
+									"type": "DatasetReference",
+									"parameters": {
+										"layer": "raw",
+										"symbol": {
+											"value": "@variables('symbol')",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"apikey": {
+				"type": "string",
+				"defaultValue": {
+					"value": "@linkedService('AlphaVantageVault').secrets.alphavantagepassword",
+					"type": "Expression"
+				}
+			}
+		},
+		"variables": {
+			"symbol": {
+				"type": "Array"
+			}
+		},
+		"annotations": []
+	}
+}

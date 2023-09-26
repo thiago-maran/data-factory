@@ -1,0 +1,2067 @@
+{
+	"name": "AlphaVantageDailyRawDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AlphaVantageStorage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"layer": {
+				"type": "string",
+				"defaultValue": "raw"
+			},
+			"symbol": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@concat('alphavantage_daily_', formatDateTime(utcnow(), 'yyyyMMddHHmmss'), '.json')",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat(dataset().layer, '/date_reference=', formatDateTime(utcnow(), 'yyyy-MM-dd'), '/ticket=', dataset().symbol)",
+					"type": "Expression"
+				},
+				"container": "alphavantage"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Meta Data": {
+					"type": "object",
+					"properties": {
+						"1. Information": {
+							"type": "string"
+						},
+						"2. Symbol": {
+							"type": "string"
+						},
+						"3. Last Refreshed": {
+							"type": "string"
+						},
+						"4. Output Size": {
+							"type": "string"
+						},
+						"5. Time Zone": {
+							"type": "string"
+						}
+					}
+				},
+				"Time Series (Daily)": {
+					"type": "object",
+					"properties": {
+						"2023-09-22": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-21": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-20": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-19": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-18": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-15": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-14": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-13": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-12": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-11": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-09": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-08": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-06": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-05": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-04": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-02": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-01": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-31": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-30": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-29": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-28": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-25": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-24": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-23": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-22": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-21": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-18": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-17": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-16": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-15": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-14": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-11": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-10": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-09": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-08": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-07": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-04": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-03": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-02": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-08-01": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-31": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-28": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-27": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-26": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-25": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-24": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-21": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-20": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-19": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-18": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-17": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-14": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-13": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-12": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-11": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-10": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-07": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-06": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-05": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-04": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-07-03": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-30": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-29": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-28": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-27": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-26": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-23": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-22": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-21": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-20": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-19": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-16": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-15": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-14": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-13": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-12": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-09": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-07": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-06": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-05": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-02": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-06-01": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-31": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-30": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-29": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-26": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-25": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-24": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-23": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-22": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-19": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-18": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-17": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-16": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-15": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-12": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-11": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-10": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-09": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-05-08": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"date_reference": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}

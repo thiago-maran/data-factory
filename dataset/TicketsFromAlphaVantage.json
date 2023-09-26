@@ -1,0 +1,24 @@
+{
+	"name": "TicketsFromAlphaVantage",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AlphaVantageStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "tickets",
+				"folderPath": "cold",
+				"container": "alphavantage"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
